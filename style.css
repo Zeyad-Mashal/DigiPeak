@@ -223,6 +223,9 @@ header .fa-bars {
     justify-content: center;
     text-align: center;
   }
+  .Home .content {
+    width: 100%;
+  }
   .Home .content h1 {
     font-size: 1.2rem;
   }
