@@ -97,17 +97,27 @@ header .fa-bars {
 }
 
 /* القسم الرئيسي */
+.header {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 .Home {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 6%;
   background-color: var(--white-color);
+  background-image: url("./images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .Home .content {
-  max-width: 600px;
+  width: 600px;
+  text-align: center;
 }
 
 .Home .content h1 {
@@ -116,6 +126,7 @@ header .fa-bars {
   line-height: 1.2;
   margin-bottom: 20px;
   color: var(--black-color);
+  text-align: center;
 }
 
 .Home .content h1 span {
@@ -127,7 +138,8 @@ header .fa-bars {
   font-size: 18px;
   color: var(--black-color);
   margin-bottom: 40px;
-  width: 500px;
+  width: 100%;
+  text-align: center;
 }
 
 .Home .content .btn {
@@ -151,6 +163,10 @@ header .fa-bars {
   margin-top: 30px;
   display: flex;
   gap: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Home .icon_social a {
@@ -385,17 +401,28 @@ header .fa-bars {
 /* ----------------about-------------- */
 
 #about {
-  padding: 80px 0;
   color: var(--black-color);
-  direction: rtl;
   text-align: center;
   font-size: 18px;
-  background-size: cover;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  margin-top: 0px;
-  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+#about .about_img {
+  width: 50%;
+}
+#about .about_img img {
+  width: 500px;
+}
+.about_content {
+  width: 50%;
+}
+.about_content > p {
+  border-bottom: 1px solid #ddd;
+  padding: 2rem 0;
 }
 #about::after {
   content: "";
@@ -583,6 +610,19 @@ header .fa-bars {
 @media (max-width: 480px) {
   #about {
     margin-top: 0px;
+    flex-direction: column-reverse;
+  }
+  .about_content {
+    width: 100%;
+    text-align: center;
+  }
+  #about .about_img {
+    width: 100%;
+    text-align: center;
+  }
+  #about .about_img img {
+    width: 100%;
+    height: auto;
   }
   .sub-title {
     font-size: 1.7rem;
@@ -625,7 +665,20 @@ header .fa-bars {
   text-align: center;
   width: 100%;
 }
-
+.category-btns select {
+  width: 300px;
+  padding: 14px 30px;
+  background: var(--white-color);
+  color: #000;
+  border: 2px solid var(--black-color);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+}
 .category-btn {
   width: 200px;
   padding: 14px 30px;
@@ -965,7 +1018,8 @@ header .fa-bars {
   width: 500px;
 }
 .contact_form input,
-.contact_form textarea {
+.contact_form textarea,
+.contact_form select {
   width: 100%;
   border: 0;
   outline: none;
