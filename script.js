@@ -89,3 +89,31 @@ loadCSS('./style.css');
 loadScript('./script.js', function () {
   console.log('تم تحميل script.js بنجاح');
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const animatedElements = document.querySelectorAll('[data-aos]');
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75 &&
+      rect.bottom >= 0
+    );
+  }
+
+  function handleScroll() {
+    animatedElements.forEach(element => {
+      if (isInViewport(element)) {
+        const delay = element.getAttribute('data-aos-delay') || 0;
+
+        setTimeout(() => {
+          element.classList.add('aos-animate');
+        }, parseInt(delay));
+      }
+    });
+  }
+
+  handleScroll();
+  window.addEventListener('scroll', handleScroll);
+});

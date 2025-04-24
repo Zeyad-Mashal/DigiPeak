@@ -1138,6 +1138,7 @@ form .btn2:active {
   width: 100%;
   text-align: center;
   padding: 25px 0;
+  margin-bottom: 2rem;
   background: var(--white-color);
   color: #555;
   font-weight: 300;
@@ -1198,4 +1199,84 @@ form .btn2:active {
     font-size: 14px;
     padding: 20px 0;
   }
+}
+
+/* animation */
+/* Add to your CSS file */
+/* Animation Classes */
+[data-aos] {
+  transition: all 1s ease;
+  transition-delay: 0s; /* This ensures delays work properly */
+  opacity: 0;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* Fade animations */
+[data-aos="fade-up"] {
+  transform: translateY(50px);
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos="fade-down"] {
+  transform: translateY(-50px);
+}
+
+[data-aos="fade-down"].aos-animate {
+  transform: translateY(0);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(-50px);
+}
+
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(50px);
+}
+
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+}
+
+/* Zoom animations */
+[data-aos="zoom-in"] {
+  transform: scale(0.6);
+}
+
+[data-aos="zoom-in"].aos-animate {
+  transform: scale(1);
+}
+
+[data-aos="zoom-out"] {
+  transform: scale(1.2);
+}
+
+[data-aos="zoom-out"].aos-animate {
+  transform: scale(1);
+}
+
+/* Flip animations */
+[data-aos="flip-left"] {
+  transform: perspective(2500px) rotateY(-100deg);
+}
+
+[data-aos="flip-left"].aos-animate {
+  transform: perspective(2500px) rotateY(0);
+}
+
+[data-aos="flip-right"] {
+  transform: perspective(2500px) rotateY(100deg);
+}
+
+[data-aos="flip-right"].aos-animate {
+  transform: perspective(2500px) rotateY(0);
 }
